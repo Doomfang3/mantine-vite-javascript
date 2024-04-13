@@ -1,0 +1,24 @@
+#root {
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.navBody{
+
+    display: flex;
+    flex-wrap:;
+    align-items: center;
+    justify-content: space-between;
+    background-color: aliceblue;
+    padding: 15px;
+
+}
+.navList{
+    
+
+    display: flex;
+    gap: 25px;
+
+}
