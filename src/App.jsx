@@ -1,20 +1,35 @@
-import { Routes, Route} from 'react-router-dom'
-import Navbar from './components/Navbar'
-import UserPage from './pages/UserPage'
-import Sidebar from './components/Sidebar'
+import React from 'react';
+import { BrowserRouter as Router,Routes, Route} from 'react-router-dom';
+import Navbar from './components/Navbar';
+import UserPage from './pages/UserPage';
+import Sidebar from './components/Sidebar';
+import Footer from './components/Footer';
+import Content from './components/Content';
+import './App.css'
 
 
 function App() {
   return (
-  <>
-   
-    <Routes>
-      <Route path={"/"} element={<hi>Potion Magic</hi>} />
-      <Route path={"/users"} element={UserPage} />ﬂ€
+   <>
+       <div className= "App">
+         <Navbar/>
+         <div className= "container">
+           <h2>Destaque do Dia</h2>
+           <p>Aqui está o cocktail do dia: Mojito!</p>
+          </div>
+         <Sidebar/>
+         <Content>
 
-      <Route path={"*"} element={<h1>404 Page</h1 >} />
-      </Routes>
-    </> 
-  )
+         </Content>
+         <Routes>
+           <Route path={"/"} element={<hi>Cocktails</hi>} />
+           <Route path={"/users"} element={UserPage} />
+           <Route path={"*"} element={<h1>404 Page</h1 >} />
+         </Routes>
+         <Footer></Footer>
+        </div>
+    </>
+  
+  );
   }
 export default App
