@@ -59,7 +59,20 @@ nav.visible{
     
 
 }
-.footer{
+.cards{
+    position: inherit;
+    margin:100px;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    text-align: center;
+    overflow: hidden;
+}
+
+
+
+.Footer{
     position: fixed;
     top: 0;
     left: 0;
@@ -82,4 +95,8 @@ nav.visible{
     
     image-rendering: pixelated; 
     opacity:0,6;
+}
+
+.content{
+    color: #000000;
 }

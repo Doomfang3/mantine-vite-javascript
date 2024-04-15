@@ -1,0 +1,39 @@
+{
+	"users": [
+		{
+			"id": 1,
+			"firstname": "Josh",
+			"dog": "Ragnar",
+			"hobbies": ["Surf", "Being bad at videogames"]
+		},
+		{
+			"id": 2,
+			"firstname": "Eric",
+			"cat": false,
+			"hobbies": ["Lord of the Rings", "DnD"]
+		}
+	],
+	"playSessions": [
+		{
+			"id": 1,
+			"userId": 1,
+			"game": "LoL",
+			"playTime": 0,
+			"description": "I need to try out this one so that I can lose my life and my soul"
+		},
+		{
+			"id": 2,
+			"userId": 1,
+			"game": "OW",
+			"playTime": 100,
+			"description": "Finally I had a win in the end"
+		},
+		{
+			"id": 3,
+			"userId": 2,
+			"game": "DnD",
+			"playTime": 600,
+			"description": "I finished my turn in Civ"
+		}
+	]
+}
