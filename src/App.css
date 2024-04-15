@@ -4,19 +4,47 @@
     padding: 2rem;
     text-align: center;
     background-image:url(./Imagens/Background.jpg);
-    opacity: 0.8;
+    /* opacity: 0.8; */
     background-size: contain;
     
 }
 
-.navList{
-
-
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    translate: 0 -72px;
     display: flex;
-    justify-content: flex-end;
-    font-size: 20px;
-    gap: 25px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 0 20px;
+    width: 100%;
+    height: 72px;
+    box-shadow: o 10px 20px rgb(0 0 0 / 10%);
+    background: #75de90;
+    transition: 0.3s;
 
+}
+
+nav.visible{
+    top: 0;
+    translate: 0;
+}
+
+.navList{
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    gap: 25px
+}
+.navList > a {
+    text-decoration: none;
+    color: rgb (225 255 255 / 96%);
+    height: 72px;
+    display: grid;
+    place-items: center;
+    ;
 }
 
 .logo{

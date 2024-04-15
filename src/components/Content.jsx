@@ -1,7 +1,7 @@
 import React from 'react';
 import Negroni  from '../Imagens/Negroni.png';
 
-function Content() {
+function Content() {w
   return (
     <div className="content" style={{ color: 'white' }}>
         
@@ -11,7 +11,7 @@ function Content() {
       <p>Este é o conteúdo principal da página.</p>
       <>
       <img src={Negroni} alt="Negroni" />
-      {/* <h3>{cocktail.nome}</h3>
+      {/* <h3>{cocktail.name}</h3>
       <p>{cocktial.tagline}</p>
       <p>Recepi: {cocktail.recepi}</p>
       <p>Glass: {coktail.glass}</p>
