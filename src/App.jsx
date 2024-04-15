@@ -1,16 +1,19 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import UserPage from './pages/UserPage';
 import Sidebar from './components/Sidebar';
 import Footer from './components/Footer';
 import Content from './components/Content';
 import Mojito from './Imagens/Mojito.png';
+import AboutPage from './pages/AboutPage';
+
+
 import './App.css';
 
 function App() {
   return (
-    <Router>
+  
       <div className="App">
         <Navbar />
         <div className="container">
@@ -23,11 +26,15 @@ function App() {
         <Routes>
           <Route path="/" element={<h1>Cocktails</h1>} />
           <Route path="/users" element={<UserPage />} />
+          <Route path='/user/:userId' element={<h1>Details</h1>} />
+            
+          <Route path="/about" element={<AboutPage/>} />
           <Route path="*" element={<h1>404 Page</h1>} />
         </Routes>
         <Footer />
       </div>
-    </Router>
+   
+   
   );
 }
 

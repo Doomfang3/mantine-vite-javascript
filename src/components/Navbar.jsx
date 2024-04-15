@@ -33,7 +33,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <body className="navBody" style={{ color: 'white' }}>
+      <div className="navBody" style={{ color: 'white' }}>
         <nav className={` ${isNavbarVisible ? "visible" : ""}`}>
           <img className="logo" src={cocktailLogo} alt="Logo" />
           <ul className="navList">
@@ -48,7 +48,7 @@ const Navbar = () => {
             </li>
           </ul>
         </nav>
-      </body>
+      </div>
     </div>
   );
 };
