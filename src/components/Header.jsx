@@ -10,13 +10,14 @@ import Aperol from '../Imagens/Aperol.png';
 function Header({ cocktail, navigate }) {
   return (
     <>
-    
+    <h1 style={{ padding: '20px' }}>Welcome to Cocktail World</h1>
     <div class = "cards">
       <Card shadow="sm" padding="lg" radius="md" withBorder>
         <Card.Section>
           <img src={Mojito} alt="Mojitoß" height={260} />
         </Card.Section>
         <Badge color="pink">Classic</Badge>
+        <h2>Mojito</h2>
         <Button color="green" fullWidth mt="md" radius="md">
           Favourite
         </Button>
@@ -26,6 +27,7 @@ function Header({ cocktail, navigate }) {
           <img src={Negroni} alt="Negroni" height={260} />
         </Card.Section>
         <Badge color="pink">Classic</Badge>
+        <h2>Negroni</h2>
         <Button color="green" fullWidth mt="md" radius="md">
           Favourite
         </Button>
@@ -35,6 +37,7 @@ function Header({ cocktail, navigate }) {
           <img src={Pinacolada} alt="Pinacolada" height={260} />
         </Card.Section>
         <Badge color="pink">Classic</Badge>
+        <h2>Pinacolada</h2>
         <Button color="green" fullWidth mt="md" radius="md">
           Favourite
         </Button>
@@ -44,6 +47,7 @@ function Header({ cocktail, navigate }) {
           <img src={Aperol} alt="Aperol" height={260} />
         </Card.Section>
         <Badge color="pink">Classic</Badge>
+        <h2>Aperol</h2>
         <Button color="green" fullWidth mt="md" radius="md">
           Favourite
         </Button>
