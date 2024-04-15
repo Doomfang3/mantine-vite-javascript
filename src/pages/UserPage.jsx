@@ -1,13 +1,16 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 
 const UserPage = () => {
+    const [ user,setUser] = useState([])
    
 const fetchAllUser = async() =>{
 try {
     const response = await fetch ()
     if (!response.ok) {
-        throw new Error
+        const userData = await response.json()
+        setUser(usersData)
     }
 
 
@@ -22,17 +25,18 @@ useEffect(() => {
 }, []);
 
 return (
-    <div>
+    <>
         <h1>All Users</h1>
-        {/* Você pode renderizar os usuários buscados aqui */}
-    </div>
+        {users.map(user => (
+            <Link key={user.Id} to={`/userdetails/${user.id}`} key={user.id}>
+                <p>Name :{user.cocktailname}</p>
+            </Link>
+        ))}
+    </>
 );
-}
+};
 
 export default UserPage;
-
-
-
 
 
 

@@ -1,12 +1,14 @@
 import {Link} from 'react-router-dom'
 import React from 'react';
+import cocktailLogo  from '../Imagens/cocktailLogo.png';
 
 function Navbar(){
     return(
 
     <div>
-        <body class="navBody">
+        <body class="navBody" style={{ color: 'white' }}>
           <nav>
+          <img class="logo" src={cocktailLogo} alt="Logo"/>
                 <ul class="navList">
                     <li>
                       <Link to ="/"> Home </Link>  

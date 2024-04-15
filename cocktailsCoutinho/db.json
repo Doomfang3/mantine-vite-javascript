@@ -3,8 +3,8 @@
 		{
 			"id": 1,
 			"cocktailname": "Josh",
-			"dog": "Ragnar",
-			"hobbies": ["Surf", "Being bad at videogames"]
+			"recepi": "Ragnar",
+			"glass": ["Surf", "Being bad at videogames"]
 		},
 		{
 			"id": 2,

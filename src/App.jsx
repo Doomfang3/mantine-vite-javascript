@@ -5,7 +5,8 @@ import UserPage from './pages/UserPage';
 import Sidebar from './components/Sidebar';
 import Footer from './components/Footer';
 import Content from './components/Content';
-import './App.css'
+import Mojito  from './Imagens/Mojito.png';
+ import './App.css'
 
 
 function App() {
@@ -13,7 +14,8 @@ function App() {
    <>
        <div className= "App">
          <Navbar/>
-         <div className= "container">
+         <div className= "container" style={{ color: 'white' }}>
+          <img src={Mojito} alt="Mojito" style={{width: '300px'}} />
            <h2>Destaque do Dia</h2>
            <p>Aqui está o cocktail do dia: Mojito!</p>
           </div>
