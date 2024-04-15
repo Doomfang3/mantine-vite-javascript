@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react-dom';
 import Negroni  from '../Imagens/Negroni.png';
 
 function Content() {w
