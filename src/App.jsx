@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import Content from './components/Content';
 import AboutPage from './pages/AboutPage';
 import Header from './components/Header';
+import Cocktails from './pages/CocktailsList'
 
 import './App.css';
 
@@ -25,11 +26,10 @@ function App() {
         <Sidebar />
         <Content />
         <Routes>
-          <Route path="/" element={<h1>Cocktails</h1>} />
+          <Route path="/" element={<h1>Cocktails of the Day</h1>} />
           <Route path="/users" element={<UserPage />} />
           <Route path='/user/:userId' element={<UserDetails />} />
-          
-            
+          <Route path='/CocktailsFC' element={<Cocktails/>} />
           <Route path="/about" element={<AboutPage/>} />
           <Route path="*" element={<h1>404 Page</h1>} />
         </Routes>
