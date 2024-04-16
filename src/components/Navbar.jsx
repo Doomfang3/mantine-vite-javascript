@@ -17,17 +17,10 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    window.addEventListener(
-      "scroll",
-      handleScroll,
-      { passive: true }
-    );
+    window.addEventListener("scroll",handleScroll,{ passive: true });
 
     return () => {
-      window.removeEventListener(
-        "scroll",
-        handleScroll
-      );
+      window.removeEventListener("scroll",handleScroll);
     };
   }, []);
 
@@ -44,7 +37,10 @@ const Navbar = () => {
               <Link to="/cocktails">Cocktails</Link>
             </li>
             <li>
-              <Link to="/users"> Users </Link>
+              <Link to="/favorites"> Favorites </Link>
+            </li>
+            <li>
+              <Link to="/addcocktail"> New Cocktail </Link>
             </li>
             <li>
               <Link to="/about">About</Link>
