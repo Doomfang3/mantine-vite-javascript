@@ -5,6 +5,7 @@ function FavoriteList({ favorites, removeFromFavorites }) { // Adicione removeFr
 
     return (
         <div className="FavoritesList">
+            <br></br>
             <h2>Favorites</h2>
 
             <div className="list">

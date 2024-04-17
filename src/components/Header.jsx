@@ -9,17 +9,20 @@ function Header({ cocktail, navigate }) {
   return (
     <>
       <h1 style={{ padding: '20px' }}>Welcome to Cocktail World</h1>
-      <div className="cards"> {/* Troque "class" por "className" */}
+      <div style={{ display: 'flex', justifyContent: 'center' }}> 
+      <div className="cards"> 
         <Card shadow="sm" padding="lg" radius="md" withBorder>
           <Card.Section>
-            <img src={Mojito} alt="Mojito" height={260} /> {/* Corrija o texto alt */}
+            <img src={Mojito} alt="Mojito" height={260} /> 
           </Card.Section>
           <Badge color="pink">Classic</Badge>
           <h2>Mojito</h2>
           <Button color="green" fullWidth mt="md" radius="md">
-            Favourite
+          Best Seller
           </Button>
         </Card>
+        </div>
+        <div className="cards"> 
         <Card shadow="sm" padding="lg" radius="md" withBorder>
           <Card.Section>
             <img src={Negroni} alt="Negroni" height={260} />
@@ -27,9 +30,10 @@ function Header({ cocktail, navigate }) {
           <Badge color="pink">Classic</Badge>
           <h2>Negroni</h2>
           <Button color="green" fullWidth mt="md" radius="md">
-            Favourite
+          Best Seller
           </Button>
         </Card>
+        </div> <div className="cards"> 
         <Card shadow="sm" padding="lg" radius="md" withBorder>
           <Card.Section>
             <img src={Pinacolada} alt="Pinacolada" height={260} />
@@ -37,9 +41,10 @@ function Header({ cocktail, navigate }) {
           <Badge color="pink">Classic</Badge>
           <h2>Pinacolada</h2>
           <Button color="green" fullWidth mt="md" radius="md">
-            Favourite
+            Best Seller
           </Button>
         </Card>
+        </div> <div className="cards"> 
         <Card shadow="sm" padding="lg" radius="md" withBorder>
           <Card.Section>
             <img src={Aperol} alt="Aperol" height={260} />
@@ -47,9 +52,10 @@ function Header({ cocktail, navigate }) {
           <Badge color="pink">Classic</Badge>
           <h2>Aperol</h2>
           <Button color="green" fullWidth mt="md" radius="md">
-            Favourite
+          Best Seller
           </Button>
         </Card>
+      </div>
       </div>
     </>
   );

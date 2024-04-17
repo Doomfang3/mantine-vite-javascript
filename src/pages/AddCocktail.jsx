@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const API_URL = "https://iba-world.com"; // Corrected API URL
+const API_URL = "http://localhost:4000";
 
 function AddCocktail() {
   const [name, setName] = useState("");
@@ -29,21 +29,22 @@ function AddCocktail() {
       ingredient: ingredient,
     };
 
-    // Call API to add cocktail
-    // fetch(API_URL + "/addCocktail", {
-    //   method: "POST",
-    //   body: JSON.stringify(newCocktail),
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    // })
-    // .then(response => response.json())
-    // .then(data => {
-    //   // Handle response from server
-    // })
-    // .catch(error => {
-    //   console.log(error);
-    // });
+    fetch(API_URL + "/addCocktail", {
+      method: "POST",
+      body: JSON.stringify(newCocktail),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then(response => response.json())
+      .then(data => {
+       
+        navigate('/success'); 
+      })
+      .catch(error => {
+        console.error('Error adding cocktail:', error);
+       
+      });
   }
 
   return (
@@ -51,6 +52,7 @@ function AddCocktail() {
       <div className="d-inline-flex flex-column w-100 p-4">
         <form onSubmit={handleFormSubmit}>
           <label>Name</label>
+          <br/>
           <input
             className="form-control mb-4"
             type="text"
@@ -59,6 +61,7 @@ function AddCocktail() {
             value={name}
             onChange={handleName}
           />
+          <br/>
           <label>Glass</label>
           <div className="d-flex">
             <input
@@ -69,13 +72,6 @@ function AddCocktail() {
               value={glass}
               onChange={handleGlass}
             />
-            <button
-              type="button"
-              className="btn btn-secondary"
-              onClick={() => setGlass('') /* Reset glass */}
-            >
-              Clear
-            </button>
           </div>
 
           <label>Category</label>
@@ -88,13 +84,6 @@ function AddCocktail() {
               value={category}
               onChange={handleCategory}
             />
-            <button
-              type="button"
-              className="btn btn-secondary"
-              onClick={() => setCategory('') /* Reset category */}
-            >
-              Clear
-            </button>
           </div>
 
           <label>Ingredients</label>
@@ -107,13 +96,6 @@ function AddCocktail() {
               value={ingredients}
               onChange={handleIngredients}
             />
-            <button
-              type="button"
-              className="btn btn-secondary"
-              onClick={() => setIngredients('') }
-            >
-              Clear
-            </button>
           </div>
 
           <label>Ingredient</label>
@@ -126,13 +108,6 @@ function AddCocktail() {
               value={ingredient}
               onChange={handleIngredient}
             />
-            <button
-              type="button"
-              className="btn btn-secondary"
-              onClick={() => setIngredient('') }
-            >
-              Clear
-            </button>
           </div>
 
           <button className="btn btn-primary btn-round">Add Cocktail</button>

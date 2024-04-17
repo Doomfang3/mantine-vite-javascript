@@ -18,14 +18,6 @@ function App() {
   
       <div className="App">
         <Navbar />
-        <Header>
-          <div>
-          <h3>Cocktails of the Day</h3>
-          </div>
-        </Header>
-       
-        <Sidebar />
-        <Content />
         <Routes>
           <Route path="/" element={<h1>Cocktails of the Day</h1>} />
           <Route path='/cocktails' element={<Cocktails/>} />
@@ -34,6 +26,7 @@ function App() {
           <Route path="/about" element={<AboutPage/>} />
           <Route path="*" element={<h1>404 Page</h1>} />
         </Routes>
+        <Header/>
         <Footer />
       </div>
    

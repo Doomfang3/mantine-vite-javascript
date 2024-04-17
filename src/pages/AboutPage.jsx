@@ -5,7 +5,7 @@ import { Button } from '@mantine/core';
 
 const AboutPage = () => {
   return (
-    <div class="aboutPage">
+    <div className="aboutPage">
       <h1>About Us</h1>
       <h3>Welcome to cocktail world!</h3>
       <p> Your one-stop shop for crafting amazing cocktails at home!

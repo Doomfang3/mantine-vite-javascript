@@ -1,61 +1,77 @@
 import React, { useState, useEffect } from 'react';
 import Search from "../components/Search";
+import { Link } from 'react-router-dom';
+import { Card, Image, Text, Badge, Button, Group } from '@mantine/core';
 
-const CocktailsList = () => {
-  const [cocktails, setCocktails] = useState([]);
+const API_URL = "http://localhost:4000"
+
+const RecipesList = () => {
+  const [recipes, setRecipes] = useState([]);
   const [favorites, setFavorites] = useState([]);
   const [query, setQuery] = useState("");
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchAllRecipes = async () => {
       try {
-        const response = await fetch("https://iba-world.com"); // Corrigido o URL da API
+        const response = await fetch(`${API_URL}/recipes`);
         if (response.ok) {
-          const data = await response.json();
-          setCocktails(data);
+          const recipesData = await response.json();
+          setRecipes(recipesData);
+          console.log (recipesData)
         }
       } catch (error) {
         console.log(error);
       }
     };
-
-    fetchData();
+  
+    fetchAllRecipes();
   }, []);
+
+
 
   const searchHandler = (string) => {
     setQuery(string);
   };
 
-  // Filtrar coquetéis favoritos
   useEffect(() => {
-    const filteredFavorites = cocktails.filter(cocktail => cocktail.isFavorite); // Supondo que há uma propriedade 'isFavorite' em cada coquetel
-    setFavorites(filteredFavorites);
-  }, [cocktails]);
+    const filteredFavorites = recipes.filter(recipe => recipe.isFavorite); 
+    setFavorites(filteredFavorites); // 
+  }, [recipes]);
 
-  // Filtrar coquetéis com base na consulta de pesquisa
-  const filteredCocktails = query ? favorites.filter(cocktail => cocktail.name.toLowerCase().includes(query.toLowerCase())) : favorites;
+  const filteredRecipes = query ? favorites.filter(recipe => recipe.name.toLowerCase().includes(query.toLowerCase())) : recipes;
 
   return (
     <>
       <Search searchHandler={searchHandler} />
-
+      <h1>All the Cocktails and recipes</h1> 
       <div className="d-inline-flex flex-wrap justify-content-center align-items-center w-100 p-4">
-        {filteredCocktails.map(cocktail => (
-          <div key={cocktail.id}>
-            <h2>Cocktails</h2>
-            <ul>
-              <li>
-                <div>Cocktail Name: {cocktail.name}</div> {/* Corrigido o acesso às propriedades do coquetel */}
-                <div>Cocktail Glass: {cocktail.glass}</div>
-                <div>Cocktail Category: {cocktail.category}</div>
-                <div>Cocktail Ingredients: {cocktail.ingredients}</div>
-              </li>
-            </ul>
-          </div>
+        {filteredRecipes.map(recipe => (
+          <Link key={recipe.id} to={`/recipes/${recipe.id}`}>
+            <div>
+              <h2>Cocktails</h2>
+              <Card className="cards" shadow="sm" padding="lg" radius="md" withBorder>
+                <Card.Section>
+                  <ul style={{ listStyleType: 'none' }}>
+                    <li>Cocktail Name: {recipe.name}</li> 
+                    <li>Type of Glass: {recipe.glass}</li> 
+                    <li>Category: {recipe.category}</li> 
+                    <li>Ingredients: {recipe.ingredients.map(ingredient => ingredient.ingredient)}</li> 
+                  </ul>
+                </Card.Section>
+                <Card.Section>
+                  <Badge color="pink">Classic</Badge>
+                  <Button color="green" fullWidth mt="md" radius="md">Favorite</Button>
+                </Card.Section>
+              </Card>
+            </div>
+          </Link>
         ))}
       </div>
     </>
   );
+  
+  
 };
 
-export default CocktailsList;
+export default RecipesList;
+

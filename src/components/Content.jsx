@@ -1,5 +1,4 @@
 import React from 'react';
-import Negroni from '../Imagens/Negroni.png';
 
 
 
