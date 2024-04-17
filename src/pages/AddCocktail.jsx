@@ -3,12 +3,12 @@ import { useNavigate } from "react-router-dom";
 
 const API_URL = "http://localhost:4000";
 
-function AddCocktail() {
-  const [name, setName] = useState("");
-  const [glass, setGlass] = useState("");
-  const [category, setCategory] = useState("");
-  const [ingredients, setIngredients] = useState("");
-  const [ingredient, setIngredient] = useState("");
+Const AddCocktail() => {
+  const [newName, setNewName] = useState("");
+  const [newGlass, setNewGlass] = useState("");
+  const [newCategory, setNewCategory] = useState("");
+  const [newIngredients, setNewIngredients] = useState("");
+  const [newIngredient, setNewIngredient] = useState("");
 
   const navigate = useNavigate();
 
@@ -49,13 +49,14 @@ function AddCocktail() {
 
   return (
     <>
+    <br></br>
+    <br></br>
       <div className="d-inline-flex flex-column w-100 p-4">
         <form onSubmit={handleFormSubmit}>
           <label>Name</label>
           <br/>
           <input
             className="form-control mb-4"
-            type="text"
             name="name"
             placeholder="Cocktail Name"
             value={name}
@@ -66,7 +67,6 @@ function AddCocktail() {
           <div className="d-flex">
             <input
               className="form-control mr-2"
-              type="text"
               name="glass"
               placeholder="Cocktail Glass"
               value={glass}
@@ -78,7 +78,6 @@ function AddCocktail() {
           <div className="d-flex">
             <input
               className="form-control mr-2"
-              type="text"
               name="category"
               placeholder="Category"
               value={category}
