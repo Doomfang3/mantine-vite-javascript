@@ -1,11 +1,12 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 function Search({ searchHandler }) {
   const [string, setString] = useState("");
 
   const handleSearch = (e) => {
-    setString(e.target.value);
-    searchHandler(e.target.value);
+    const searchString = e.target.value;
+    setString(searchString);
+    searchHandler(searchString);
   };
 
   return (

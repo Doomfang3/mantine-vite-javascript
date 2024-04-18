@@ -9,6 +9,7 @@ import Header from './components/Header';
 import Cocktails from './pages/AllCocktails'
 import FavoriteList from './pages/Favorite';
 import NewCocktail from './pages/AddNewCocktail'
+import IngredientsPage from './pages/IngredientsPage';
 
 import './App.css';
 
@@ -21,8 +22,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Content/>} />
           <Route path='/cocktails' element={<Cocktails/>} />
+          <Route path="/recipes/:id" element={IngredientsPage} />
           <Route path='/favorites' element={<FavoriteList/>} />
-          <Route path='/addcocktail' element={<NewCocktail/>} />
+          <Route path='/addCocktail' element={<NewCocktail/>} />
           <Route path="/about" element={<AboutPage/>} />
           <Route path="*" element={<h1>404 Page</h1>} />
         </Routes>

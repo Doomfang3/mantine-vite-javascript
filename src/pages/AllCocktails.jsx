@@ -3,7 +3,7 @@ import Search from "../components/Search";
 import { Link } from 'react-router-dom';
 import { Card, Image, Text, Badge, Button, Group } from '@mantine/core';
 import newCocktail from '../Imagens/newCoktailLogo.jpg'
-import searchHandler from "../components/Search";
+
 
 const API_URL = "http://localhost:4000"
 
@@ -96,8 +96,10 @@ const RecipesList = () => {
               <div className="card-content">
                 <ul>
                   <li>Glass: {recipe.glass}</li> 
+                  <Link key={recipe.id} to={`/recipes/${recipe.id}`}>
                   <li>Category: {recipe.category}</li> 
-                  <li>Ingredients: {recipe.ingredients.map(ingredient => ingredient.ingredient)}</li> 
+                  <li>Ingredients: {recipe.ingredients.map(ingredient => ingredient.ingredient)}</li>
+                  </Link> 
                 </ul>
               </div>
               <div className="card-actions">
