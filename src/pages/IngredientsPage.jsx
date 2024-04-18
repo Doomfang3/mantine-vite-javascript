@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 
-const API_URL = 'http://localhost:4000'
+
 
 const IngredientsPage = () => {
   const { id } = useParams();
@@ -11,7 +11,7 @@ const IngredientsPage = () => {
   useEffect(() => {
     const fetchRecipe = async () => {
       try {
-        const response = await fetch(`${API_URL}/recipes/${id}`);
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/recipes/${id}`);
         if (response.ok) {
           const recipeData = await response.json();
           setRecipe(recipeData);
@@ -23,7 +23,7 @@ const IngredientsPage = () => {
   
     fetchRecipe();
   }, [id]);
-
+console.log(recipe)
   if (!recipe) {
     return <div>Loading...</div>;
   }
@@ -34,7 +34,7 @@ const IngredientsPage = () => {
       <h3>Ingredients:</h3>
       <ul>
         {recipe.ingredients.map(ingredient => (
-          <li key={ingredient.id}>{ingredient.name}</li>
+          <li key={ingredient.id}>{ingredient.special ? ingredient.special : ingredient.ingredient}</li>
         ))}
       </ul>
     </div>

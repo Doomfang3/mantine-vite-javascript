@@ -19,5 +19,5 @@ server.use((req, res, next) => {
 server.use(router);
 
 server.listen(PORT, () => {
-	console.log(`JSON Server is running on http://localhost:${PORT}`);
+	console.log(`JSON Server is running on http://import.meta.env.VITE_API_URL:${PORT}`);
 });

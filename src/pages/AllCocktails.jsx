@@ -5,7 +5,7 @@ import { Card, Image, Text, Badge, Button, Group } from '@mantine/core';
 import newCocktail from '../Imagens/newCoktailLogo.jpg'
 
 
-const API_URL = "http://localhost:4000"
+
 
 const RecipesList = () => {
   const [recipes, setRecipes] = useState([]);
@@ -15,9 +15,10 @@ const RecipesList = () => {
   useEffect(() => {
     const fetchAllRecipes = async () => {
       try {
-        const response = await fetch(`${API_URL}/recipes`);
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/recipes`);
         if (response.ok) {
           const recipesData = await response.json();
+          console.log("Recipes", recipesData)
           setRecipes(recipesData);
           console.log (recipesData)
         }
@@ -34,7 +35,7 @@ const RecipesList = () => {
   const handleCancel = async (recipeId,event) => {
     event.preventDefault()
     try {
-      const response = await fetch(`${API_URL}/recipes/${recipeId}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/recipes/${recipeId}`, {
         method: "DELETE",
       });
       if (response.ok) {
@@ -51,7 +52,6 @@ const RecipesList = () => {
       console.log( error);
     }
   };
-
 
 
   const handleFavorite = (recipeId) => {

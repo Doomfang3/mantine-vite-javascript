@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import MakingCocktail from '../Imagens/MakingCocktail.jpg'
 
 
-const API_URL = 'http://localhost:4000'
+
 
 const AddCocktail = () => {
   const [name, setName] = useState("");
@@ -29,7 +29,7 @@ const AddCocktail = () => {
     };
  
     try {
-      const response = await fetch(`${API_URL}/recipes`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/recipes`, {
         method: "POST",
         body: JSON.stringify(newCocktail),
         headers: {
