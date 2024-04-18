@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Search from "../components/Search";
 import { Link } from 'react-router-dom';
 import { Card, Image, Text, Badge, Button, Group } from '@mantine/core';
+import newCocktail from '../Imagens/newCoktailLogo.jpg'
 
 const API_URL = "http://localhost:4000"
 
@@ -29,49 +30,86 @@ const RecipesList = () => {
 
 
 
+  const handleCancel = async (recipeId) => {
+    try {
+      const response = await fetch(`${API_URL}/recipes/${recipeId}`, {
+        method: "DELETE",
+      });
+      if (response.ok) {
+        
+
+       
+        const updatedRecipes = recipes.filter(recipe => recipe.id !== recipeId);
+        setRecipes(updatedRecipes);
+        console.log("Recipe deleted successfully!");
+      } else {
+        console.log("Erro ");
+      }
+    } catch (error) {
+      console.log( error);
+    }
+  };
+
+
+
+  const handleFavorite = (recipeId) => {
+    const updatedRecipes = recipes.map(recipe => {
+      if (recipe.id === recipeId) {
+        return { ...recipe, isFavorite: !recipe.isFavorite }; 
+      }
+      return recipe;
+    });
+    setRecipes(updatedRecipes);
+  };
+
   const searchHandler = (string) => {
     setQuery(string);
   };
 
   useEffect(() => {
     const filteredFavorites = recipes.filter(recipe => recipe.isFavorite); 
-    setFavorites(filteredFavorites); // 
+    setFavorites(filteredFavorites); 
   }, [recipes]);
 
   const filteredRecipes = query ? favorites.filter(recipe => recipe.name.toLowerCase().includes(query.toLowerCase())) : recipes;
 
   return (
-    <>
-      <Search searchHandler={searchHandler} />
+  
+      <>
+      <div>
+      <img src={newCocktail} alt="NewCocktail" />
+      </div>
+      <Search searchHandler={searchHandler} />ﬂ
       <h1>All the Cocktails and recipes</h1> 
-      <div className="d-inline-flex flex-wrap justify-content-center align-items-center w-100 p-4">
+      <div className="cards-container">
         {filteredRecipes.map(recipe => (
           <Link key={recipe.id} to={`/recipes/${recipe.id}`}>
-            <div>
-              <h2>Cocktails</h2>
-              <Card className="cards" shadow="sm" padding="lg" radius="md" withBorder>
-                <Card.Section>
-                  <ul style={{ listStyleType: 'none' }}>
-                    <li>Cocktail Name: {recipe.name}</li> 
-                    <li>Type of Glass: {recipe.glass}</li> 
-                    <li>Category: {recipe.category}</li> 
-                    <li>Ingredients: {recipe.ingredients.map(ingredient => ingredient.ingredient)}</li> 
-                  </ul>
-                </Card.Section>
-                <Card.Section>
-                  <Badge color="pink">Classic</Badge>
-                  <Button color="green" fullWidth mt="md" radius="md">Favorite</Button>
-                </Card.Section>
-              </Card>
+            <div className="card">
+              <div className="card-header">
+                <h2 className="card-title">{recipe.name}</h2>
+              </div>
+              <div className="card-content">
+                <ul>
+                  <li>Glass: {recipe.glass}</li> 
+                  <li>Category: {recipe.category}</li> 
+                  <li>Ingredients: {recipe.ingredients.map(ingredient => ingredient.ingredient)}</li> 
+                </ul>
+              </div>
+              <div className="card-actions">
+              <Button className="favorite-btn" onClick={() => handleFavorite(recipe.id)} fullWidth mt="md" radius="md">
+                  {recipe.isFavorite ? 'Unfavorite' : 'Favorite'}
+                </Button>
+                <Button className="delete-btn" type='button' onClick={() => handleCancel(recipe.id)} 
+                fullWidth mt="md" radius="md" title="Delete Item">Delete</Button>
+              </div>
             </div>
           </Link>
         ))}
       </div>
     </>
   );
-  
-  
 };
+
 
 export default RecipesList;
 

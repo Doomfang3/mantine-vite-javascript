@@ -4,11 +4,13 @@ import Mojito from '../Imagens/Mojito.png';
 import Negroni from '../Imagens/Negroni.png';
 import Pinacolada from '../Imagens/Pinacolada.png';
 import Aperol from '../Imagens/Aperol.png';
+import { useState } from 'react';
+
+
 
 function Header({ cocktail, navigate }) {
   return (
     <>
-      <h1 style={{ padding: '20px' }}>Welcome to Cocktail World</h1>
       <div style={{ display: 'flex', justifyContent: 'center' }}> 
       <div className="cards"> 
         <Card shadow="sm" padding="lg" radius="md" withBorder>

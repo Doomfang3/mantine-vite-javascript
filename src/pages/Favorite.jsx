@@ -1,7 +1,7 @@
 import React from "react";
-import CocktailsList from "./AllCocktails"; // Importe CocktailsList se necessário
+import CocktailsList from "./AllCocktails"; 
 
-function FavoriteList({ favorites, removeFromFavorites }) { // Adicione removeFromFavorites como propriedade
+function FavoriteList({ favorites, removeFromFavorites }) { 
 
     return (
         <div className="FavoritesList">
@@ -9,15 +9,16 @@ function FavoriteList({ favorites, removeFromFavorites }) { // Adicione removeFr
             <h2>Favorites</h2>
 
             <div className="list">
-                {favorites && favorites.map(cocktail => ( // Use `cocktail` como o nome do parâmetro da função de mapeamento
-                    <div className="FavoritePlanCard" key={cocktail.id}> {/* Use `cocktail.id` em vez de `CocktailsList.id` */}
+                {favorites && favorites.map(cocktail => ( 
+            
+                    <div className="FavoritePlanCard" key={cocktail.id}> 
                         <div className="top-section">
-                            <img src={cocktail.image} alt={cocktail.name} /> {/* Use `cocktail.image` e `cocktail.name` */}
+                            <img src={cocktail.image} alt={cocktail.name} /> 
                         </div>
                         <div className="bottom-section">
                             <h2 className="favorites" style={{ display: 'block' }}>
                                 <div>
-                                    <h3>{cocktail.name}</h3> {/* Use `cocktail.name` */}
+                                    <h3>{cocktail.name}</h3> 
                                     <button onClick={() => removeFromFavorites(cocktail.id)}>
                                         Remove from Favorites
                                     </button>

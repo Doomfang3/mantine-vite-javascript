@@ -59,62 +59,231 @@ nav.visible{
     
 
 }
-/* .cards{
-    position: inherit;
-    margin:100px;
-    background-color: transparent;
-    display: flex;
-    justify-content: space-between;
-    border-radius: 10px;
+
+
+/*----AboutPage css----*/
+
+.aboutPage{
+    color: #000000 ;
+    font-family: Qochy DEMO;
+    font-size: 20px;
+    font-weight: 800;
+    
+    
+    image-rendering: pixelated; 
+    opacity:0,6;
+}
+
+/*-----AddNewCocktail------*/
+
+.bartender {
+    background-color: white;
+    display: flex; 
+    
     text-align: center;
-    overflow: hidden;
-} */
+  }
+  
+  .bartender img {
+    margin-right: 10px; 
+  }
+  
+  
+  .bartender img {
+    margin-right: 10px;
+    height: 600px; 
+    width: auto; 
+
+    /*--Content css--*/
+  }
+  .content {
+    max-width: 1000px; 
+    margin: 0 auto; 
+    padding: 40px;
+    background-color:white;
+    border-radius: 5px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .content h2 {
+    font-family: Boone;
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 20px; 
+    font-size: 2.2rem; 
+    font-weight: bold;
+  }
+  
+  .content h3 {
+    font-family: Chomsky;
+    font-size: 100px;
+    margin-bottom: 15px; 
+  }
+  
+  .content img {
+    display: block; 
+    margin: 10px auto; 
+    max-width: 100%; 
+    border-radius: 5px; 
+  }
+  
+  .content p {
+    font-family: Qochy DEMO;
+    font-size: 1.5rem; 
+    line-height: 1.5; 
+    margin-bottom: 20px; 
+  }
+  
+
+
+  /* AddCocktail.css */
+
+.add-cocktail {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 2rem;
+  margin: 0 auto; 
+  max-width: 600px; 
+}
+
+.add-cocktail form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; 
+}
+
+.add-cocktail label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.add-cocktail input[type="text"],
+.add-cocktail input[type="email"],
+.add-cocktail select { 
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #f5f5f5; 
+}
+
+.add-cocktail .form-group {
+  display: flex;
+  align-items: center; 
+}
+
+.add-cocktail .form-group input[type="text"] {
+  flex: 1; 
+}
+.add-cocktail button[type="submit"] {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: #fff; 
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.add-cocktail button[type="submit"]:hover {
+  background-color: #0069d9;
+}
+.add-cocktail .bartender {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem; 
+}
+
+.add-cocktail .bartender img {
+  width: 100%; 
+  max-width: 300px;
+  margin-bottom: 1rem;
+}
+
+.add-cocktail .bartender h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.add-cocktail .bartender ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.add-cocktail .bartender ul li {
+  line-height: 1.5; 
+}
+
+/*----AllCocktails-----*/
+/* styles.css */
 
 .cards-container {
-    perspective: 1000px;
-  }
-  
-  .cards {
-    position: inherit;
-    margin:100px;
-    background-color: transparent;
     display: flex;
-    justify-content: space-between;
-    border-radius: 10px;
-    text-align: center;
-    overflow: hidden;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-  }
-  
-  .cards:hover {
-    transform: rotateY(180deg);
-  }
-  
-  .cards .front,
-  .cards .back {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 10px;
-    transition: 0,6s;
-    
-  }
-  
-  .cards .back {
-    transform: rotateY(180deg);
-  }
-  
-  .cards .back {
-    display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    padding: 20px;
+  }
+  
+  .card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    width: 300px;
+  }
+  
+  .card-header {
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .card-title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .card-content {
+    padding: 20px;
+  }
+  
+  .card-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .card-content li {
+    margin-bottom: 10px;
+  }
+  
+  .card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .card-actions button {
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+  }
+  
+  .card-actions .favorite-btn {
+    background-color: #4caf50;
+    color: #fff;
+  }
+  
+  .card-actions .delete-btn {
+    background-color: #f44336;
+    color: #fff;
   }
   
 
@@ -133,18 +302,4 @@ nav.visible{
     height: 72px;
    background: #fff;
   
-}
-
-.aboutPage{
-    color: #000000 ;
-    font-size: 20px;
-    font-weight: 800;
-    
-    
-    image-rendering: pixelated; 
-    opacity:0,6;
-}
-
-.content{
-    color: #000000;
 }

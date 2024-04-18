@@ -7,8 +7,8 @@ import Content from './components/Content';
 import AboutPage from './pages/AboutPage';
 import Header from './components/Header';
 import Cocktails from './pages/AllCocktails'
-import FavoriteList from './pages/FavoriteList';
-import NewCocktail from './pages/AddCocktail'
+import FavoriteList from './pages/Favorite';
+import NewCocktail from './pages/AddNewCocktail'
 
 import './App.css';
 
@@ -19,7 +19,7 @@ function App() {
       <div className="App">
         <Navbar />
         <Routes>
-          <Route path="/" element={<h1>Cocktails of the Day</h1>} />
+          <Route path="/" element={<Content/>} />
           <Route path='/cocktails' element={<Cocktails/>} />
           <Route path='/favorites' element={<FavoriteList/>} />
           <Route path='/addcocktail' element={<NewCocktail/>} />
