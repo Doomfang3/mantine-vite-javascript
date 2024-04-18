@@ -3,6 +3,7 @@ import Search from "../components/Search";
 import { Link } from 'react-router-dom';
 import { Card, Image, Text, Badge, Button, Group } from '@mantine/core';
 import newCocktail from '../Imagens/newCoktailLogo.jpg'
+import searchHandler from "../components/Search";
 
 const API_URL = "http://localhost:4000"
 
@@ -30,7 +31,8 @@ const RecipesList = () => {
 
 
 
-  const handleCancel = async (recipeId) => {
+  const handleCancel = async (recipeId,event) => {
+    event.preventDefault()
     try {
       const response = await fetch(`${API_URL}/recipes/${recipeId}`, {
         method: "DELETE",
@@ -77,14 +79,17 @@ const RecipesList = () => {
   
       <>
       <div>
-      <img src={newCocktail} alt="NewCocktail" />
+      <img className='logoNewCocktail' src={newCocktail} alt="NewCocktail" />
       </div>
-      <Search searchHandler={searchHandler} />ﬂ
+      <Search searchHandler={searchHandler} />
       <h1>All the Cocktails and recipes</h1> 
       <div className="cards-container">
         {filteredRecipes.map(recipe => (
           <Link key={recipe.id} to={`/recipes/${recipe.id}`}>
             <div className="card">
+              <div>
+                <img className="card-image" src={recipe.image_url} alt={recipe.name} />
+              </div>
               <div className="card-header">
                 <h2 className="card-title">{recipe.name}</h2>
               </div>
@@ -99,7 +104,7 @@ const RecipesList = () => {
               <Button className="favorite-btn" onClick={() => handleFavorite(recipe.id)} fullWidth mt="md" radius="md">
                   {recipe.isFavorite ? 'Unfavorite' : 'Favorite'}
                 </Button>
-                <Button className="delete-btn" type='button' onClick={() => handleCancel(recipe.id)} 
+                <Button className="delete-btn" type='button' onClick={(event) => handleCancel(recipe.id,event)} 
                 fullWidth mt="md" radius="md" title="Delete Item">Delete</Button>
               </div>
             </div>

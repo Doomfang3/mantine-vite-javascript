@@ -55,17 +55,18 @@ const AddCocktail = () => {
       <br></br>
       <div className='bartender'>
         <img src={MakingCocktail} alt="Making" />
-        
         <br></br>
-        <h2> Be one :</h2>
-        <ul style={{ listStyleType: 'none'}}>
-        <li>A maestro of spirits,</li>
-        <li> Mixing elixirs with flair,</li>
-        <li> Creating new flavors,</li>
-        <li>That soothe the soul and warm the heart,</li>
-        <li>A true artist of the bar.</li>
-        </ul>
+         <div className="text">
+         <h2> Be one :</h2>
+         <ul style={{ listStyleType: 'none'}}>
+         <li>A maestro of spirits,</li>
+         <li> Mixing elixirs with flair,</li>
+         <li> Creating new flavors,</li>
+         <li>That soothe the soul and warm the heart,</li>
+         <li>A true artist of the bar.</li>
+         </ul>
         </div>
+      </div>
       <div className="add-cocktail">
         <form onSubmit={handleFormSubmit}>
           <label>Name</label>

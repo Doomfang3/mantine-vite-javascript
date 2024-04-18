@@ -3,7 +3,7 @@
     margin: 0 auto;
     padding: 2rem;
     text-align: center;
-    background-image:url(./Imagens/Backgroud2.jpg);
+    /* background-image:url(./Imagens/Backgroud2.jpg); */
     /* opacity: 0.8; */
     background-size: contain;
     
@@ -77,24 +77,25 @@ nav.visible{
 /*-----AddNewCocktail------*/
 
 .bartender {
-    background-color: white;
-    display: flex; 
-    
-    text-align: center;
+    display: flex;
+    align-items: center;
   }
   
-  .bartender img {
-    margin-right: 10px; 
-  }
-  
-  
-  .bartender img {
-    margin-right: 10px;
-    height: 600px; 
-    width: auto; 
 
-    /*--Content css--*/
+  
+  .bartender img {
+   
+    width: 400px;
+    margin-right: 20px; 
+    margin-left: 20px;
   }
+  .text{
+    flex: 1;
+    font-family: Qochy DEMO;
+    font-size: large;
+  }
+  
+  /*--Content css--*/
   .content {
     max-width: 1000px; 
     margin: 0 auto; 
@@ -133,15 +134,13 @@ nav.visible{
     margin-bottom: 20px; 
   }
   
-
-
-  /* AddCocktail.css */
+  /*---AddCocktail----*/
 
 .add-cocktail {
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 2rem;
+  padding: 0;
   margin: 0 auto; 
   max-width: 600px; 
 }
@@ -160,6 +159,7 @@ nav.visible{
 .add-cocktail input[type="text"],
 .add-cocktail input[type="email"],
 .add-cocktail select { 
+  size: 3rem 2rem;  
   padding: 0.75rem 1rem;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -302,4 +302,12 @@ nav.visible{
     height: 72px;
    background: #fff;
   
+}
+
+.logoNewCocktail{
+    margin: 0;
+    width: 1000px;
+    height: 400px;
+    object-fit: cover;
+
 }
